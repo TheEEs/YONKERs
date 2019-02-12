@@ -1,0 +1,53 @@
+<section id="header" data-sticky-container >
+  <div data-sticky class="sticky" data-sticky-on="small" data-options="marginTop:0;" style="padding-top:1em;" data-check-every=0 >
+    <div class="grid-x">
+      <section class="cell grid-x medium-4">
+        <div class="cell shrink medium-offset-2 small-offset-1">
+          <h3 data-toggle="offCanvas" class="mon show-for-medium"><%= fa_icon "bars", class:['show-for-medium'], id: 'logo-bars' %>YONKERs</h3>
+          <h3 class="mon show-for-small-only">YONKERs</h3>
+        </div>
+        <div class="cell small-7 show-for-small-only grid-x align-right">
+          <a href="<%= spree.cart_path%>" class="cell cart-button shrink show-for-small"><%= fa_icon 'shopping-bag'%>(<%= simple_current_order.item_count %>)</a>
+        </div>
+      </section>
+      <section class="cell grid-x medium-8" >
+        <div class="cell medium-4 small-12 grid-x medium-offset-1">
+          
+        </div>
+        <div class="cell grid-x medium-5  align-right">
+          <div class="cell medium-4 small-12 margin-3">
+            <%= render 'spree/shared/locale_selector' %>
+          </div>
+          <a id="cart-button" href='<%= spree.cart_path %>' class="cell cart-button medium-shrink show-for-medium button"><%= fa_icon 'shopping-bag'%>(<%= simple_current_order.item_count %>)</a>
+        </div>
+      </section>
+    </div>
+    <div class="grid-x show-for-small-only">
+      <div class="cell medium-12 small-12">
+        <ul id="nav-menu" class="vertical menu accordion-menu" data-accordion-menu>
+          <li>
+            <a id="menu-bars"><%= fa_icon "bars" %></a>
+            <ul class="menu vertical nested">
+              <li><%= link_to "HOME", spree.root_path, class: ['mon'] %></li>
+              <li><%= link_to "ALL PRODUCTS", spree.products_path, class: ['mon'] %></li>
+              <% Spree::Taxon.all.each do |taxon| %>
+                <li><%= link_to taxon.name.upcase, seo_url(taxon), class: ['mon']%></li>
+              <% end %> 
+            </ul>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="off-canvas position-left " id="offCanvas" data-off-canvas>
+  <div class="off-canvas-content" data-off-canvas-content>
+    <ul id="medium-nav-menu" class="vertical menu align-right">
+      <li><%= link_to "HOME", spree.root_path, class: ['mon'] %></li>
+      <li><li><%= link_to "ALL PRODUCTS", spree.products_path, class: ['mon'] %></li></li>
+      <% Spree::Taxon.all.each do |taxon| %>
+        <li><%= link_to taxon.name.upcase, seo_url(taxon), class: ['mon','text-right']%></li>
+      <% end %> 
+    </ul>
+  </div>
+</section>

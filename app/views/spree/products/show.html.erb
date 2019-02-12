@@ -1,0 +1,82 @@
+<% cache [I18n.locale, current_pricing_options, @product] do %>
+  <%= render partial: 'promotions' %>
+  <div id='product_show' data-hook="product_show" class='grid-container grid-x' itemscope itemtype="http://schema.org/Product">
+    <% @body_id = 'product-details' %>
+    <div id='product_show' class="cell grid-x medium-6 align-top" >
+      <div class="grid-x">
+        <h1 class='mon cell'><%= @product.name %></h1>
+        <%= render partial: 'orbit'%>
+        <p class='nunito cell'><%= product_description(@product) rescue t('spree.product_has_no_description') %></p>
+        <h4 class='nunito cell'><%= @product.price_for(current_pricing_options)%></h4>
+        <div class='cell nunito'>
+          <%= render partial: 'properties' %>
+        </div>
+        <div class='cell grid-x'>
+          <% @image_paths = [] %>
+          <% @product.variant_images.sort.each do |image| %>
+            <% next if @product.images.include?(image) or @image_paths.include?(image.attachment_file_name) %>
+            <div class='cell small-1 thumbnail-tooltips' data-html='<%=image_tag image.attachment(:product)%>'>
+              <%= image_tag image.attachment(:mini) %>
+            </div>
+            <% @image_paths << image.attachment_file_name %>
+          <% end %>
+          <div class='cell small-12'>
+            <%= render partial: 'cart_form' %>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class='cell medium-6 grid-x align-center show-for-medium'  >
+      <% @product.images.uniq.each do |image| %>
+        <div class='cell small-7'>
+          <%= image_tag image.attachment(:large) %>
+        </div>
+      <% end %>
+    </div>
+    <!--div class="columns six alpha" data-hook="product_left_part">
+      <div class="row" data-hook="product_left_part_wrap">
+
+        <div id="product-images" data-hook="product_images">
+          <div id="main-image" data-hook>
+            <%= render partial: 'image' %>
+          </div>
+          <div id="thumbnails" data-hook>
+            <%= render partial: 'thumbnails' %>
+          </div>
+        </div>
+
+        <div data-hook="product_properties">
+          <%= render partial: 'properties' %>
+        </div>
+
+        <div data-hook="promotions">
+          <%= render partial: 'promotions' %>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="columns ten omega" data-hook="product_right_part">
+      <div class="row" data-hook="product_right_part_wrap">
+
+        <div id="product-description" data-hook="product_description">
+
+          <h1 class="product-title" itemprop="name"><%= @product.name %></h1>
+
+          <div itemprop="description" data-hook="description">
+            <%= product_description(@product) rescue t('spree.product_has_no_description') %>
+          </div>
+
+          <div id="cart-form" data-hook="cart_form">
+            <%= render partial: 'cart_form' %>
+          </div>
+
+        </div>
+
+        <%= render partial: 'taxons' %>
+
+      </div>
+    </div-->
+
+  </div>
+<% end %>

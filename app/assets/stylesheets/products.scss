@@ -1,0 +1,21 @@
+.card{
+    margin: 30px 7px 10px 7px;
+    .card-divider{
+        background-color: #612570;
+        color: white;
+    }
+    .showmore{
+        background-color: #665c84;
+    }
+    .showmore:hover{
+        background-color: #714288;
+    }
+}
+.taxon-title{
+    margin-top: 2rem;
+}
+.taxon-title::before{
+    content: '>>';
+    font-family: 'Raleway', sans-serif;
+    padding-right: 2rem;
+}
