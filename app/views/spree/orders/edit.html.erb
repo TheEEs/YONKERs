@@ -5,7 +5,7 @@
   <% if @order.line_items.empty? %>
 
     <div class='cell grid-x align-center small-12'>
-      <div class='grid-x align-center medium-10 show-for-medium'><%= image_tag 'empty_cart', class:"cell shrink"%></div>
+      <div class='grid-x align-center medium-10 show-for-medium'><%= image_tag 'empty_cart.jpg', class:"cell shrink"%></div>
       <h2 class='cell medium-12 raleway text-center'><%= t('spree.your_cart_is_empty') %></p></h2>
       <p><%= link_to t('spree.continue_shopping'), products_path, class: 'button ui teal' %></p>
     </div>
