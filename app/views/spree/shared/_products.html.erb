@@ -11,8 +11,8 @@
 <% end %>
 <div data-hook="products_search_results_heading">
   <% if products.empty? %>
-    <div data-hook="products_search_results_heading_no_results_found">
-      <%= t('spree.no_products_found') %>
+    <div class='grid-x' data-hook="products_search_results_heading_no_results_found">
+      <h1 class='mon cell text-center'><%= t('spree.no_products_found') %></h1>
     </div>
   <% elsif params.key?(:keywords) %>
     <div data-hook="products_search_results_heading_results_found">
