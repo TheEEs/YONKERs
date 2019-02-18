@@ -20,8 +20,11 @@
 //= require foundation
 $(document).on('turbolinks:load', function () {
     $(function () { $(document).foundation(); });
-    $('#locale_selector select').change(function() {
-        this.form.submit();
-    });  
+
     $('select.ui.dropdown').dropdown();
 });
+$(function () {
+    $('#locale_selector select').change(function () {
+        this.form.submit();
+    });
+})

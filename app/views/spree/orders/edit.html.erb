@@ -1,17 +1,23 @@
 <% @body_id = 'cart' %>
+  <% if @order.line_items.empty? %>
+    <div  class='grid-y grid-frame align-center '>
+      <h2 class='raleway text-center'><%= t('spree.your_cart_is_empty') %></h2>
+      <p class='text-center'><%= link_to t('spree.continue_shopping'), products_path, class: 'button ui teal' %></p>
+    </div>
+  <% end %>
 <div id='cart' class='grid-container grid-x' data-hook="cart_container">
-  <h1 class='mon cell small-12'><%= t('spree.shopping_cart') %></h1>
+  
 
   <% if @order.line_items.empty? %>
 
-    <div class='cell grid-x align-center small-12'>
-      <div class='grid-x align-center medium-10 show-for-medium'><%= image_tag 'empty_cart.jpg', class:"cell shrink"%></div>
+    <!--div  class='cell grid-x align-center small-12'>
+      <div class='cell shrink align-center medium-10'><%= image_tag 'empty_cart.jpg', class:"cell shrink"%></div>
       <h2 class='cell medium-12 raleway text-center'><%= t('spree.your_cart_is_empty') %></p></h2>
       <p><%= link_to t('spree.continue_shopping'), products_path, class: 'button ui teal' %></p>
-    </div>
+    </div-->
 
   <% else %>
-
+    <h1 class='mon cell small-12'><%= t('spree.shopping_cart') %></h1>
     <div data-hook="outside_cart_form">
       <%= form_for @order, url: update_cart_path, html: {id: 'update-cart'} do |order_form| %>
         <div data-hook="inside_cart_form">

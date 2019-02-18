@@ -31,3 +31,8 @@
 </div>
 
 <%= render partial: 'spree/shared/products', locals: { products: @best_sellers, taxon: @taxon } unless @best_sellers.empty? %>
+<% if @best_sellers.empty? %>
+<div class='grid-y align-center grid-frame'>
+  <h4 class='raleway text-center no-product-found'  id='no-product-found'><%= t('spree.no_products_found') %></h4>
+</div>
+<% end %>
