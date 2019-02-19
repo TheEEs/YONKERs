@@ -12,9 +12,10 @@
  *
  *= require_tree .
  *= require_self
+ *= require semantic-ui
  *= require foundation_and_overrides
  *= require foundation
  *= require font-awesome
- *= require semantic-ui
+
  */
  @import url('https://fonts.googleapis.com/css?family=Montserrat|Nunito|Raleway');

@@ -8,6 +8,7 @@
     font-family: 'Raleway', sans-serif;
 }
 #header{
+    z-index: 1 !important;
     box-shadow: 5px 2px 14px grey;
     h3{
         margin-top: .2rem;
@@ -29,6 +30,7 @@
         list-style: none;
     }
     #nav-menu{
+        
         background: #6d3580;
         li{
             a{

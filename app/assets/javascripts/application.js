@@ -19,9 +19,9 @@
 
 //= require foundation
 $(document).on('turbolinks:load', function () {
-    $(function () { $(document).foundation(); });
-
     $('select.ui.dropdown').dropdown();
+    //$('html').css('overflow-x', 'hidden')
+    $(function () { $(document).foundation(); });
 });
 $(function () {
     $('#locale_selector select').change(function () {
