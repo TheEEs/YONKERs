@@ -29,7 +29,7 @@ Spree.config do |config|
 
 
   # Admin:
-
+  config.default_country_iso = "US"
   # Custom logo for the admin
   config.admin_interface_logo = "main-logo.png"
 

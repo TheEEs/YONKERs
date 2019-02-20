@@ -42,7 +42,7 @@
       <% end %>
     </div>
 
-    <div id="empty-cart" data-hook class='grid-x'>
+    <div id="empty-cart" data-hook class='grid-x cell grid-margin-top'>
       <%= form_tag empty_cart_path, method: :put do %>
         <p id="clear_cart_link" data-hook>
         <%= submit_tag t('spree.empty_cart'), class: 'button ui gray' %>
