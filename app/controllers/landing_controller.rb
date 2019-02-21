@@ -4,7 +4,7 @@ class LandingController < ApplicationController
     if @welcome == 'yes'
       redirect_to home_path
     else
-      cookies[:welcome] = 'yes'
+      cookies[:welcome] = {value: 'yes', expires: 10.minutes}
     end
   end
 end
