@@ -5,13 +5,24 @@
   <body>
     <%= render partial: 'spree/shared/header' %>
     <% if flash.any? %>
-    <div class='grid-x align-center flash_messages'>
-      <% flash.each do |type,message| %>
-        <div class="ui label teal">
-          <%= message %>
+    <div class='ui basic modal'>
+        <div class="ui icon header">
+          <i class="cart arrow down icon"></i>
+          Notification
         </div>
-      <% end %>
-    </div>
+        <div class="content">
+          <% flash.each do |type,message| %>
+            <p class='text-center raleway'> <%= message %></p>
+          <% end %>
+        </div>
+        <div class='actions'>
+          <div class="ui green basic cancel inverted button">
+            <i class="papel plan outline icon"></i>
+            Got It!
+          </div>
+        </div>
+      </div>
+      <%= javascript_include_tag 'modal_open'%>
     <% end %>
     <%= yield %>
     <%= render partial: 'spree/shared/footer'%>
