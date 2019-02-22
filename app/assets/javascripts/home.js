@@ -1,4 +1,7 @@
 $(document).on('turbolinks:load',function () {
+     $('select.ui.dropdown').dropdown();
+    //$('html').css('overflow-x', 'hidden')
+    $(function () { $(document).foundation(); });
     new TypeIt('#medium.type-it', {
         strings: ["Hello!","We", "Are", "\"YONKERS\""],
         speed: 89,
