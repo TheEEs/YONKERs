@@ -5,7 +5,7 @@ Spree.config do |config|
   # Core:
 
   # Default currency for new sites
-  config.currency = "USD"
+  config.currency = "AUD"
 
   # from address for transactional emails
   config.mails_from = "store@example.com"
@@ -29,7 +29,7 @@ Spree.config do |config|
 
 
   # Admin:
-  config.default_country_iso = "US"
+  config.default_country_iso = "AU"
   # Custom logo for the admin
   config.admin_interface_logo = "main-logo.png"
 
