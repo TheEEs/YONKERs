@@ -1,0 +1,14 @@
+<div class='grid-y grid-frame align-center'>
+    <div class='grid-x align-center'>
+        <%= @file %>
+        <%= form_tag upload_path , class:'ui form', multipart: true  do %>
+            <div class="inline field">
+                <label>Choose image to upload</label>
+                <%= file_field :banner, :image, accept: 'image/*' %>
+            </div>
+            <div class='field'>
+                <%= submit_tag "Upload", class: 'ui button'%>
+            </div>
+        <% end %>
+    </div>
+</div>
