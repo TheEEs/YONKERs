@@ -1,5 +1,5 @@
  <% url = spree.product_path(product, taxon_id: @taxon.try(:id)) %>
-<div class='cell medium-3 small-6 large-4'>
+<div class='cell medium-3 small-11 large-4'>
     <div class='card'>
         <div class='grid-x align-center'>
           <%= link_to(render('spree/shared/image', image: product.display_image, size: :large, itemprop: "image"), url, itemprop: 'url', class:['align-center'])%>
