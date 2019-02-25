@@ -4,7 +4,7 @@
     <% @body_id = 'product-details' %>
     <div id='product_show' class="cell grid-x medium-6 align-top" >
       <div class="grid-x">
-        <h1 class='mon cell'><%= @product.name %></h1>
+        <h1 class='raleway cell'><%= @product.name %></h1>
         <%= render partial: 'orbit'%>
         <p class='nunito cell'><%= product_description(@product) rescue t('spree.product_has_no_description') %></p>
         <h4 class='nunito cell'><%= @product.price_for(current_pricing_options)%></h4>

@@ -25,28 +25,7 @@
 <div class='grid-container'>
   <div class='grid-x'>
     <% products.each do |product| %>
-      <% url = spree.product_path(product, taxon_id: @taxon.try(:id)) %>
-      <div class='cell medium-3 small-6 large-4'>
-       <div class='radius bordered shadow card'>
-        <div class='grid-x align-center'>
-          <%= link_to(render('spree/shared/image', image: product.display_image, size: :large, itemprop: "image"), url, itemprop: 'url', class:['align-center'])%>
-        </div>
-        <div class="card-divider">
-          <h5 class='raleway'><%= truncate(product.name, length: 30) %></h5>
-        </div>
-        <div class="card-section">
-          <h4>
-            <% if price = product.price_for(current_pricing_options) %>
-                <span class="price selling" itemprop="price" content="<%= price.to_d %>">
-                  <%= price.to_html %>
-                </span>
-              <% end %>
-              <span itemprop="priceCurrency" content="<%= current_pricing_options.currency %>"></span>
-          </h4>
-          <p><%= truncate(product.description, length: 50) %> <%= link_to "Show more...", url, class:['button','ui','small','mon','showmore'] %></p>
-        </div>
-      </div>
-      </div>
+     <%= render partial: 'spree/shared/card', locals:{product: product} %>
     <% end %>
   </div>
 </div>
