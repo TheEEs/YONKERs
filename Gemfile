@@ -51,6 +51,7 @@ gem 'autoprefixer-rails'
 gem 'aws-sdk'
 gem 'solidus_backend'
 gem 'solidus_gateway', github:  'TheEEs/solidus_gateway'
+gem 'solidus_paypal_braintree', github: 'solidusio/solidus_paypal_braintree', branch: :master
 gem 'carrierwave', '~> 1.0'
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
