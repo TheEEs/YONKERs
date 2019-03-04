@@ -9,4 +9,4 @@
 //= require spree/frontend
 //= require_tree .
 //= require foundation
-$(function(){ $(document).foundation(); });
+$(function(){ $(document).foundation(); });//= require solidus_paypal_braintree/frontend

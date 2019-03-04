@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+mount SolidusPaypalBraintree::Engine, at: '/solidus_paypal_braintree'
   
   filter :locale
   get 'banner/upload'

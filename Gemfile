@@ -18,6 +18,7 @@ gem 'money-rails', '~>1.12'
 gem 'jquery-rails', '~> 4.3', '>= 4.3.3'
 gem 'permalink', '~> 2.0'
 gem 'semantic-ui-sass'
+gem 'pg'
 gem "font-awesome-rails"
 # Use CoffeeScript for .coffee assets and views
 gem 'coffee-rails', '~> 4.2'
@@ -48,10 +49,9 @@ gem 'routing-filter', '~> 0.6.0'
 gem 'sprockets-es6', '~> 0.9.2'
 gem 'foundation-rails'
 gem 'autoprefixer-rails'
-gem 'aws-sdk'
 gem 'solidus_backend'
-gem 'solidus_gateway', github:  'TheEEs/solidus_gateway'
-gem 'solidus_paypal_braintree', github: 'solidusio/solidus_paypal_braintree', branch: :master
+gem 'solidus_gateway'
+gem 'solidus_paypal_braintree', github: 'solidusio/solidus_paypal_braintree', branch: :master 
 gem 'carrierwave', '~> 1.0'
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
