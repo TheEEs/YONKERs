@@ -18,7 +18,6 @@ gem 'money-rails', '~>1.12'
 gem 'jquery-rails', '~> 4.3', '>= 4.3.3'
 gem 'permalink', '~> 2.0'
 gem 'semantic-ui-sass'
-gem 'pg'
 gem "font-awesome-rails"
 # Use CoffeeScript for .coffee assets and views
 gem 'coffee-rails', '~> 4.2'
